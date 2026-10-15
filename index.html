@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_f2f30d1579aae9e80d56e3f40cc5239e {
+                #map_70a0f8a1f75bc474e0b46f3a2a4f9b5c {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,19 +54,79 @@
 <body>
     
     
-            <div class="folium-map" id="map_f2f30d1579aae9e80d56e3f40cc5239e" ></div>
+            <div class="folium-map" id="map_70a0f8a1f75bc474e0b46f3a2a4f9b5c" ></div>
         
+
+<div id="lineage-panel" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(255,255,255,0.93);
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    padding: 12px 16px;
+    max-width: 560px;
+    font-family: monospace;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    max-height: 340px;
+    overflow-y: auto;
+">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
+    <b style="font-size:13px">📡 Data Lineage</b>
+    <button onclick="document.getElementById('lineage-panel').style.display='none'"
+            style="border:none;background:none;cursor:pointer;font-size:14px">✕</button>
+  </div>
+  <table style="border-collapse:collapse; width:100%">
+    <tr><td style="color:#666;padding-right:8px">Run time</td>
+        <td><b>2026-10-16 04:48:00 AEST</b></td></tr>
+    <tr><td style="color:#666">Source</td>
+        <td>Weather Underground PWS API (scraped)</td></tr>
+    <tr><td style="color:#666">Date range</td>
+        <td>2026-10-13 → 2026-10-16</td></tr>
+    <tr><td style="color:#666">Stations</td>
+        <td>0/11 with coords · 0/11 with rain data</td></tr>
+  </table>
+  <details style="margin-top:8px">
+    <summary style="cursor:pointer; color:#444">Station detail</summary>
+    <table style="margin-top:6px; border-collapse:collapse; width:100%; font-size:11px">
+      <tr style="background:#f0f0f0">
+        <th style="text-align:left;padding:2px 4px">ID</th>
+        <th style="text-align:left;padding:2px 4px">Coords</th>
+        <th style="text-align:left;padding:2px 4px">Rainfall</th>
+      </tr>
+      <tr><td>IBRISB4817</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB1452</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB1788</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB641</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB4287</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB2950</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB4289</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB1202</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB2356</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB4965</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+<tr><td>IBRISB2388</td><td>coords unavailable</td><td style='font-size:11px'>13/10: None mm, 14/10: None mm, 15/10: None mm, 16/10: None mm</td></tr>
+
+    </table>
+  </details>
+  <div style="margin-top:6px; color:#999; font-size:10px">
+    ● Green = 0 mm &nbsp; ● Orange = &lt;10 mm &nbsp; ● Red = ≥10 mm &nbsp; ● Gray = no data<br>
+    Circles left→right = oldest→newest day. Opacity increases with recency.
+  </div>
+</div>
+
 </body>
 <script>
     
     
-            var map_f2f30d1579aae9e80d56e3f40cc5239e = L.map(
-                "map_f2f30d1579aae9e80d56e3f40cc5239e",
+            var map_70a0f8a1f75bc474e0b46f3a2a4f9b5c = L.map(
+                "map_70a0f8a1f75bc474e0b46f3a2a4f9b5c",
                 {
                     center: [-27.52, 153.12],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 10,
+  "zoom": 11,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -78,7 +138,7 @@
 
         
     
-            var tile_layer_6747a05b09882cff34c6c34f7f050258 = L.tileLayer(
+            var tile_layer_b073492c433d35cba55df237f820e7e0 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,425 +155,26 @@
             );
         
     
-            tile_layer_6747a05b09882cff34c6c34f7f050258.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
+            tile_layer_b073492c433d35cba55df237f820e7e0.addTo(map_70a0f8a1f75bc474e0b46f3a2a4f9b5c);
         
     
-            var feature_group_1bc84dd649376c14f1068bc36b53f545 = L.featureGroup(
+            var layer_control_a6aa51af71c7b0fee063ee79af1761ba_layers = {
+                base_layers : {
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" : tile_layer_b073492c433d35cba55df237f820e7e0,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_a6aa51af71c7b0fee063ee79af1761ba = L.control.layers(
+                layer_control_a6aa51af71c7b0fee063ee79af1761ba_layers.base_layers,
+                layer_control_a6aa51af71c7b0fee063ee79af1761ba_layers.overlays,
                 {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
 }
-            );
-        
-    
-            var circle_marker_651af6860f722efb027cef56798dd476 = L.circleMarker(
-                [-27.54, 153.125],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_1bc84dd649376c14f1068bc36b53f545);
-        
-    
-            var rectangle_e5a1eba81b9c2cbec88580843603ab42 = L.rectangle(
-                [[-27.5415, 153.121], [-27.5385, 153.1315]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_1bc84dd649376c14f1068bc36b53f545);
-        
-    
-        var popup_669013b711a756fb40957e300db64c0d = L.popup({
-  "maxWidth": 300,
-});
+            ).addTo(map_70a0f8a1f75bc474e0b46f3a2a4f9b5c);
 
-        
-            
-                var html_a4dd3bd5170a0debd812ef3ce16b2fc7 = $(`<div id="html_a4dd3bd5170a0debd812ef3ce16b2fc7" style="width: 100.0%; height: 100.0%;">         <b>IBRISB2449</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 1.3 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_669013b711a756fb40957e300db64c0d.setContent(html_a4dd3bd5170a0debd812ef3ce16b2fc7);
-            
-        
-
-        feature_group_1bc84dd649376c14f1068bc36b53f545.bindPopup(popup_669013b711a756fb40957e300db64c0d)
-        ;
-
-        
-    
-    
-            feature_group_1bc84dd649376c14f1068bc36b53f545.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_a5401bf12a4f3550107ca0eb9bb8bd70 = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_c67f49319fffc79d890ef8e700c1d5a7 = L.circleMarker(
-                [-27.51, 153.10500000000002],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_a5401bf12a4f3550107ca0eb9bb8bd70);
-        
-    
-            var rectangle_86b83cd6956b0f0c968bb1a07b500d72 = L.rectangle(
-                [[-27.5115, 153.10100000000003], [-27.5085, 153.1115]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_a5401bf12a4f3550107ca0eb9bb8bd70);
-        
-    
-        var popup_adb2f12efdeaa89e58edacabe48ac587 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_26d4478e126caa848b3f4083d816a0d2 = $(`<div id="html_26d4478e126caa848b3f4083d816a0d2" style="width: 100.0%; height: 100.0%;">         <b>IQUEENSL252</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 4.8 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_adb2f12efdeaa89e58edacabe48ac587.setContent(html_26d4478e126caa848b3f4083d816a0d2);
-            
-        
-
-        feature_group_a5401bf12a4f3550107ca0eb9bb8bd70.bindPopup(popup_adb2f12efdeaa89e58edacabe48ac587)
-        ;
-
-        
-    
-    
-            feature_group_a5401bf12a4f3550107ca0eb9bb8bd70.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_a2bb93f49f808645650f9cad12f0dde9 = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_62ee4d121950f52ab109055e2646df45 = L.circleMarker(
-                [-27.5, 153.135],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_a2bb93f49f808645650f9cad12f0dde9);
-        
-    
-            var rectangle_9134a90669fceaf72272a0c3ee25422e = L.rectangle(
-                [[-27.5015, 153.131], [-27.4985, 153.14149999999998]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_a2bb93f49f808645650f9cad12f0dde9);
-        
-    
-        var popup_fbc16ab6800bb2f69e326b00b7f45ed6 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_c881dee87e88df781bde1b7feb20c5a4 = $(`<div id="html_c881dee87e88df781bde1b7feb20c5a4" style="width: 100.0%; height: 100.0%;">         <b>IBRISB2451</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 3.6 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_fbc16ab6800bb2f69e326b00b7f45ed6.setContent(html_c881dee87e88df781bde1b7feb20c5a4);
-            
-        
-
-        feature_group_a2bb93f49f808645650f9cad12f0dde9.bindPopup(popup_fbc16ab6800bb2f69e326b00b7f45ed6)
-        ;
-
-        
-    
-    
-            feature_group_a2bb93f49f808645650f9cad12f0dde9.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_c97acfde5a25d6fded873c5403f52b4a = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_27b9bf36bfdb2830685048150ae1d79a = L.circleMarker(
-                [-27.5, 153.155],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_c97acfde5a25d6fded873c5403f52b4a);
-        
-    
-            var rectangle_96e370d7fddfebd5339a319e3e5e103b = L.rectangle(
-                [[-27.5015, 153.151], [-27.4985, 153.1615]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_c97acfde5a25d6fded873c5403f52b4a);
-        
-    
-        var popup_ebc83546e45c480cf22fb7e02a221b3c = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_cd50c795d956138e52454ae845bb4656 = $(`<div id="html_cd50c795d956138e52454ae845bb4656" style="width: 100.0%; height: 100.0%;">         <b>IBRISB2855</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 3.0 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_ebc83546e45c480cf22fb7e02a221b3c.setContent(html_cd50c795d956138e52454ae845bb4656);
-            
-        
-
-        feature_group_c97acfde5a25d6fded873c5403f52b4a.bindPopup(popup_ebc83546e45c480cf22fb7e02a221b3c)
-        ;
-
-        
-    
-    
-            feature_group_c97acfde5a25d6fded873c5403f52b4a.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_7882b6ae950c4f4f28c7990df0fe0b80 = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_ee2c6148ca2f107d1688c13b379dd743 = L.circleMarker(
-                [-27.52, 153.185],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_7882b6ae950c4f4f28c7990df0fe0b80);
-        
-    
-            var rectangle_23cab17ab3d747254fd23ef41ecd760b = L.rectangle(
-                [[-27.5215, 153.181], [-27.5185, 153.1915]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_7882b6ae950c4f4f28c7990df0fe0b80);
-        
-    
-        var popup_0ff416809c3dfbf01f2d8c9c0b858580 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_9bcd8a59f9256584ac9b914021e68d5b = $(`<div id="html_9bcd8a59f9256584ac9b914021e68d5b" style="width: 100.0%; height: 100.0%;">         <b>IBRISB5091</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 6.3 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_0ff416809c3dfbf01f2d8c9c0b858580.setContent(html_9bcd8a59f9256584ac9b914021e68d5b);
-            
-        
-
-        feature_group_7882b6ae950c4f4f28c7990df0fe0b80.bindPopup(popup_0ff416809c3dfbf01f2d8c9c0b858580)
-        ;
-
-        
-    
-    
-            feature_group_7882b6ae950c4f4f28c7990df0fe0b80.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_c4f6c7329355b5ff7958bc217fcc92c9 = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_875f742c860fd0247d34f1c0cacdf859 = L.circleMarker(
-                [-27.55, 153.195],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_c4f6c7329355b5ff7958bc217fcc92c9);
-        
-    
-            var rectangle_e05231533befb9eef67fd65b66bcb713 = L.rectangle(
-                [[-27.5515, 153.191], [-27.5485, 153.20149999999998]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_c4f6c7329355b5ff7958bc217fcc92c9);
-        
-    
-        var popup_f5613b41b27503fbec00786db2c190ea = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_77438b8239bef4d0ef2edef231a6dc66 = $(`<div id="html_77438b8239bef4d0ef2edef231a6dc66" style="width: 100.0%; height: 100.0%;">         <b>IBRISB2349</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 4.1 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_f5613b41b27503fbec00786db2c190ea.setContent(html_77438b8239bef4d0ef2edef231a6dc66);
-            
-        
-
-        feature_group_c4f6c7329355b5ff7958bc217fcc92c9.bindPopup(popup_f5613b41b27503fbec00786db2c190ea)
-        ;
-
-        
-    
-    
-            feature_group_c4f6c7329355b5ff7958bc217fcc92c9.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_b723f9bca173ba6d74c52b8428c7d5eb = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_04735dee6b3c8fbdaf71381e5311079a = L.circleMarker(
-                [-27.56, 153.175],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_b723f9bca173ba6d74c52b8428c7d5eb);
-        
-    
-            var rectangle_7b1ed097d9c6a47f2cefb445b8cdcb71 = L.rectangle(
-                [[-27.5615, 153.17100000000002], [-27.5585, 153.1815]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_b723f9bca173ba6d74c52b8428c7d5eb);
-        
-    
-        var popup_875d6f19316dadfd7be71a04d2ebeb19 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_402560668e44cf67c5142ae84ea116e0 = $(`<div id="html_402560668e44cf67c5142ae84ea116e0" style="width: 100.0%; height: 100.0%;">         <b>IBURBA19</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 0.0 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_875d6f19316dadfd7be71a04d2ebeb19.setContent(html_402560668e44cf67c5142ae84ea116e0);
-            
-        
-
-        feature_group_b723f9bca173ba6d74c52b8428c7d5eb.bindPopup(popup_875d6f19316dadfd7be71a04d2ebeb19)
-        ;
-
-        
-    
-    
-            feature_group_b723f9bca173ba6d74c52b8428c7d5eb.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_175ec94be23a5fdbe96ef16e6f9e9628 = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_83ae4a951ab79aa9c10df01fa3a2200f = L.circleMarker(
-                [-27.6, 153.175],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_175ec94be23a5fdbe96ef16e6f9e9628);
-        
-    
-            var rectangle_a41841ba9076522ce31ab5239e3fee84 = L.rectangle(
-                [[-27.6015, 153.17100000000002], [-27.5985, 153.1815]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_175ec94be23a5fdbe96ef16e6f9e9628);
-        
-    
-        var popup_508980258310ce6dd899813061fc3e4a = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_93ef7cac804e73987e9cc604619cccd5 = $(`<div id="html_93ef7cac804e73987e9cc604619cccd5" style="width: 100.0%; height: 100.0%;">         <b>ISHELD1</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 0.0 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_508980258310ce6dd899813061fc3e4a.setContent(html_93ef7cac804e73987e9cc604619cccd5);
-            
-        
-
-        feature_group_175ec94be23a5fdbe96ef16e6f9e9628.bindPopup(popup_508980258310ce6dd899813061fc3e4a)
-        ;
-
-        
-    
-    
-            feature_group_175ec94be23a5fdbe96ef16e6f9e9628.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_1cc59375805881f0238a90a3cfbc48ca = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_d18af30c27b755fb2e9471c972a03388 = L.circleMarker(
-                [-27.57, 153.185],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_1cc59375805881f0238a90a3cfbc48ca);
-        
-    
-            var rectangle_a0658edbe25473287b8a70b71f775f47 = L.rectangle(
-                [[-27.5715, 153.181], [-27.5685, 153.1915]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_1cc59375805881f0238a90a3cfbc48ca);
-        
-    
-        var popup_78b905d4e2323ab8f340f80a8cb439e7 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_02be04aa0990981ad66ded26e4286d18 = $(`<div id="html_02be04aa0990981ad66ded26e4286d18" style="width: 100.0%; height: 100.0%;">         <b>IBRISB2680</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 3.8 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_78b905d4e2323ab8f340f80a8cb439e7.setContent(html_02be04aa0990981ad66ded26e4286d18);
-            
-        
-
-        feature_group_1cc59375805881f0238a90a3cfbc48ca.bindPopup(popup_78b905d4e2323ab8f340f80a8cb439e7)
-        ;
-
-        
-    
-    
-            feature_group_1cc59375805881f0238a90a3cfbc48ca.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_5d38cda8be1c0ae0f8dd75ef8ecdde5e = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_2a8b5d88891588932c3f93eb7d4cd2fd = L.circleMarker(
-                [-27.57, 153.215],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_5d38cda8be1c0ae0f8dd75ef8ecdde5e);
-        
-    
-            var rectangle_802a316c886b0fcd6c24a132d53a9534 = L.rectangle(
-                [[-27.5715, 153.211], [-27.5685, 153.2215]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_5d38cda8be1c0ae0f8dd75ef8ecdde5e);
-        
-    
-        var popup_d220e8879ee9eaa22323a22e7336e681 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_1b5b3b18e8711af3d21282d5b3b7eec2 = $(`<div id="html_1b5b3b18e8711af3d21282d5b3b7eec2" style="width: 100.0%; height: 100.0%;">         <b>IBRISB2204</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 3.0 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_d220e8879ee9eaa22323a22e7336e681.setContent(html_1b5b3b18e8711af3d21282d5b3b7eec2);
-            
-        
-
-        feature_group_5d38cda8be1c0ae0f8dd75ef8ecdde5e.bindPopup(popup_d220e8879ee9eaa22323a22e7336e681)
-        ;
-
-        
-    
-    
-            feature_group_5d38cda8be1c0ae0f8dd75ef8ecdde5e.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
-        
-    
-            var feature_group_b1a4f12427f669dad1041d206aea9cc0 = L.featureGroup(
-                {
-}
-            );
-        
-    
-            var circle_marker_44b0565a7a25b0721fb9b6159cbb1159 = L.circleMarker(
-                [-27.64, 153.225],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(feature_group_b1a4f12427f669dad1041d206aea9cc0);
-        
-    
-            var rectangle_042d1996bb229f919ebba59c3dabcea1 = L.rectangle(
-                [[-27.6415, 153.221], [-27.6385, 153.23149999999998]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
-            ).addTo(feature_group_b1a4f12427f669dad1041d206aea9cc0);
-        
-    
-        var popup_04c7e43ece96f04339eeb0b056056a33 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_da246ae3419461cb5a6939299583c2b4 = $(`<div id="html_da246ae3419461cb5a6939299583c2b4" style="width: 100.0%; height: 100.0%;">         <b>IMOUNT300</b><br>         2026-05-16: N/A mm<br>         2026-05-17: 5.6 mm<br>         2026-05-18: N/A mm<br>         2026-05-19: N/A mm         </div>`)[0];
-                popup_04c7e43ece96f04339eeb0b056056a33.setContent(html_da246ae3419461cb5a6939299583c2b4);
-            
-        
-
-        feature_group_b1a4f12427f669dad1041d206aea9cc0.bindPopup(popup_04c7e43ece96f04339eeb0b056056a33)
-        ;
-
-        
-    
-    
-            feature_group_b1a4f12427f669dad1041d206aea9cc0.addTo(map_f2f30d1579aae9e80d56e3f40cc5239e);
         
 </script>
 </html>
